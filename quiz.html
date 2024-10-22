@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Much Are You Like David Brown?</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <style>
+        body {
+            background: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+        .quiz-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .options {
+            margin-bottom: 30px;
+        }
+        .option {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .option:hover {
+            background: #0056b3;
+        }
+        .submit-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-button:hover {
+            background: #0056b3;
+        }
+        .result {
+            font-size: 24px;
+            margin-top: 30px;
+            color: #333;
+        }
+        .retake-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .retake-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>How Much Are You Like David Brown?</h1>
+        <form id="quiz-form">
+            <div class="question">
+                1. How do you handle challenges?
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="2"> I tackle them head-on and adapt as needed.</label><br>
+                <label><input type="radio" name="q1" value="1"> I avoid them when possible.</label><br>
+                <label><input type="radio" name="q1" value="3"> I see them as opportunities to grow.</label>
+            </div>
+
+            <div class="question">
+                2. How comfortable are you with taking risks?
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="3"> Very comfortable – calculated risks are key to success.</label><br>
+                <label><input type="radio" name="q2" value="1"> I prefer to play it safe.</label><br>
+                <label><input type="radio" name="q2" value="2"> I take risks if there's no other option.</label>
+            </div>
+
+            <div class="question">
+                3. How do you approach teamwork?
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="3"> I empower my team and lead by example.</label><br>
+                <label><input type="radio" name="q3" value="2"> I contribute but prefer to follow instructions.</label><br>
+                <label><input type="radio" name="q3" value="1"> I like to work alone whenever possible.</label>
+            </div>
+
+            <div class="question">
+                4. How do you deal with failure?
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="3"> I learn from it and move forward stronger.</label><br>
+                <label><input type="radio" name="q4" value="2"> I get discouraged but try again.</label><br>
+                <label><input type="radio" name="q4" value="1"> I avoid situations where I might fail.</label>
+            </div>
+
+            <div class="question">
+                5. How do you envision your future?
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="3"> I want to make a meaningful impact on the world.</label><br>
+                <label><input type="radio" name="q5" value="2"> I hope to find stability and comfort.</label><br>
+                <label><input type="radio" name="q5" value="1"> I take things one day at a time.</label>
+            </div>
+
+            <button type="button" class="submit-button" onclick="calculateScore()">Submit Quiz</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function calculateScore() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = 'You are nothing like David Brown! But don\'t worry, you can always try again.';
+
+            // Add retake button
+            const retakeButton = document.createElement('button');
+            retakeButton.classList.add('retake-button');
+            retakeButton.innerText = 'Retake Quiz';
+            retakeButton.onclick = function () {
+                document.getElementById('quiz-form').reset();
+                resultDiv.textContent = '';
+                retakeButton.remove();
+            };
+            resultDiv.appendChild(retakeButton);
+        }
+    </script>
+</body>
+</html>

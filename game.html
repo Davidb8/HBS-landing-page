@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Brown Adventure Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <script src="game.js" defer></script>
+    <style>
+        body {
+            background: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+        .game-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #game-canvas {
+            width: 100%;
+            height: 400px;
+            background: #007bff;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        .start-button {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px 30px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .start-button:hover {
+            background: #0056b3;
+        }
+        .instructions {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>David Brown Adventure Game</h1>
+        <p>Help David Brown tackle challenges and become a true leader!</p>
+        <p class="instructions">
+            In this game, you embody David Brown, navigating through obstacles, collecting power-ups, and avoiding enemies. The goal is to reach the target while overcoming challenges, just as David faces obstacles in real life. Collect power-ups to boost your speed and achieve greatness faster. Avoid enemies who represent the challenges that try to hinder your journey. Succeeding in this game will show you what it means to be adaptable, resourceful, and persistent – just like David Brown!
+        </p>
+        <canvas id="game-canvas"></canvas>
+        <button class="start-button">Start Game</button>
+    </div>
+</body>
+</html>
